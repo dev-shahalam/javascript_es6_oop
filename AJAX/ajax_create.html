@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Product Create</title>
+</head>
+
+<body>
+    <h1 class="text-danger">Hello, world!</h1>
+
+    <button onclick="createProduct()">Create</button>
+
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+
+        function createProduct() {
+            let url = "https://crud.teamrabbil.com/api/v1/CreateProduct";
+
+            let bodyData = {
+                Img: "ImageUrl",
+                ProductCode: "100",
+                ProductName: "Product Name",
+                Qty: 100,
+            }
+
+            let config = {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(bodyData)
+            }
+
+            fetch(url, config)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Product List</title>
+</head>
+
+<body>
+    <h1 class="text-danger">Hello, world!</h1>
+
+    <button onclick="getProducts()" >Click</button>
+    <h1 id="name" ></h1>
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+
+        function getProducts() {
+            let name = document.getElementById('name');
+            let url = "https://crud.teamrabbil.com/api/v1/ReadProduct";
+            let config = {
+                method: "GET"
+            }
+            fetch(url, config)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
